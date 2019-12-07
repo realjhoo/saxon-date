@@ -1,0 +1,24 @@
+{
+  "name": "saxon-date",
+  "version": "1.0.0",
+  "description": "An Anglo-Saxon Calendar",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/realjhoo/saxon-date.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/realjhoo/saxon-date/issues"
+  },
+  "homepage": "https://github.com/realjhoo/saxon-date#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  }
+}
