@@ -1,5 +1,6 @@
 #!/usr/bin/env /usr/local/bin/node
-// rename saxon-date.1h.js for bitbar plugin
+
+
 /*
 Saxon Date Node App
   Equinox algorithm adapted from:
@@ -179,10 +180,15 @@ function isIntercalary(d, m, y) {
   const minNewMoon = 0.02;
   const maxNewMoon = 0.98;
   let intercalary = false;
+  let justChanged = false;
+
   for (i = 0; i < 14; i++) {
     let moonAge = moonPhase(d + i, m, y);
-    if (moonAge > maxNewMoon || moonAge < minNewMoon) {
+    if (moonAge > maxNewMoon || moonAge < minNewMoon && !justChanged) {
       intercalary = true;
+      justChanged = true;
+    } else {
+      justChanged = false;
     }
   }
   return intercalary;
@@ -212,26 +218,28 @@ function getSaxonDate(intercalary, ssDateString, today, year) {
   const todayJulianDate =
     Math.floor(today.valueOf() / (1000 * 60 * 60 * 24) - 0.5) + 2440588;
   let saxonDayCount = todayJulianDate - ssJulianDate;
-
-  let saxonDay = 0;
-  let moon = 0;
+  let saxonDay = (moon = 0);
+  let justChanged = false;
 
   for (let i = 0; i <= saxonDayCount; i++) {
     saxonDay++;
 
     // CONVERT ssJulianDate TO m d y
-    let [da, mo, ye] = JDtoDateString(ssJulianDate + i);
+    let [tago, monato, jaro] = JDtoDateString(ssJulianDate + i);
 
     // CHECK MOONPHASE
-    let moonAge = moonPhase(da, mo, ye);
+    let moonAge = moonPhase(tago, monato, jaro);
 
-    if (moonAge > maxNewMoon || moonAge < minNewMoon) {
+    if (moonAge > maxNewMoon || (moonAge < minNewMoon && !justChanged)) {
+      justChanged = true;
       // skip Thrilitha if a 12 moon year
       if (intercalary === false && moon === 0) {
         moon++;
       }
       moon++;
       saxonDay = 1; // reset date, new moon
+    } else {
+      justChanged = false;
     }
     // ***************************
     //console.log(saxonMonth[moon]);
