@@ -256,7 +256,7 @@ function getSaxonDate(intercalary, ssDateString, today, year) {
 // ========================================================
 function main() {
   let intercalary = false;
-  // let today = new Date("2019.12.24"), // date testing
+  // let today = new Date("2019.12.24"), // date testing use / for Safari
   let today = new Date(),
     day = today.getDate(),
     month = today.getMonth(),
@@ -268,7 +268,7 @@ function main() {
 
   // get day month and year of summer solstice
   const [d, m, y] = JDtoDateString(sSolstice(ssyear));
-  const ssDateString = y + "." + m + "." + d;
+  const ssDateString = y + "/" + m + "/" + d; // use / for Safari
 
   // 13 moons or 12?
   intercalary = isIntercalary(d, m, y);
