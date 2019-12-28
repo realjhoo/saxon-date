@@ -1,6 +1,5 @@
 #!/usr/bin/env /usr/local/bin/node
 
-
 /*
 Saxon Date Node App
   Equinox algorithm adapted from:
@@ -10,6 +9,7 @@ Saxon Date Node App
     algorithm from Meeus
   Moon Phase algorithm by Endel Dreyer Github @endel
   by Jerry L Hoover 2019.12.04 (8 Ereyule 2269)
+  Command Line option added 4 Afteryule 2270
 */
 
 //BitBar metadata
@@ -184,7 +184,7 @@ function isIntercalary(d, m, y) {
 
   for (i = 0; i < 14; i++) {
     let moonAge = moonPhase(d + i, m, y);
-    if (moonAge > maxNewMoon || moonAge < minNewMoon && !justChanged) {
+    if (moonAge > maxNewMoon || (moonAge < minNewMoon && !justChanged)) {
       intercalary = true;
       justChanged = true;
     } else {
@@ -254,11 +254,17 @@ function getSaxonDate(intercalary, ssDateString, today, year) {
 }
 
 // ========================================================
-function main() {
+function main(dateArg) {
   let intercalary = false;
-  // let today = new Date("2019.12.24"), // date testing use / for Safari
-  let today = new Date(),
-    day = today.getDate(),
+  let today; // to give proper scope
+
+  if (dateArg === "") {
+    today = new Date();
+  } else {
+    today = new Date(dateArg);
+  }
+
+  let day = today.getDate(),
     month = today.getMonth(),
     ssyear = today.getFullYear(),
     year = today.getFullYear();
@@ -278,9 +284,6 @@ function main() {
 
   // bit bar grabs display from this log statement
   console.log(saxonDate + "     ");
-
-  // *** TODO NOTES ***
-  // command line (or other method) enter date yyy.mm.dd returns saxon date
 }
 
 // ========================================================
@@ -300,4 +303,6 @@ const saxonMonth = [
   "Erelitha"
 ];
 
-main();
+let dateArg = "";
+dateArg = process.argv.slice(2).toString();
+main(dateArg);
