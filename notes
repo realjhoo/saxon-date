@@ -1,5 +1,8 @@
 notes
 
+node saxon-date --> outputs the current Saxon calendar date
+node saxon-date 2011.06.11 --> outputs the date on 6 June 2011
+
 Moon Phase Verification at https://www.moongiant.com/phase/11/26/2019
 
 2269 RE
