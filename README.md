@@ -1,6 +1,6 @@
 # saxon-date
 
-###An Anglo-Saxon Lunar Date generator - and BitBar plugin
+### An Anglo-Saxon Lunar Date generator - and BitBar plugin
 
 I learned that there had once been a native English lunar calendar in use in the centuries before the Christianization of the British Isles. The Venerable Bede, in a book written in the 700s, laid out the rules by which this calendar had worked, and the names of the months.
 
@@ -16,11 +16,11 @@ Currently, it fails on dates before 1899, due to the method of moon phase I am u
 
 This readme.md was updated on the 13th day of Afteryule in the Runic Year 2270.
 
-##Bitbar Notes
+## Bitbar Notes
 Run `chmod +x plugin.sh.` on file so Bitbar can run it.
 
 filename: saxon-date.1h.js
 The "1h" part causes the date to refresh every hour. This is adjustable, as a Bitbar feature.
 
-##Command Line Notes
+## Command Line Notes
 Entering `node saxon-date 2011.06.11` in the terminal will produce the Saxon Date for June 11th 2011 (so, big endian), which is 11 Afterlitha 2261 (which is little endian). Sorry if that's confusing.
