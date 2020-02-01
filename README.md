@@ -2,9 +2,9 @@
 
 ### An Anglo-Saxon Lunar Date generator - and BitBar plugin
 
-I learned that there had once been a native English lunar calendar in use in the centuries before the Christianization of the British Isles. The Venerable Bede, in a book written in the 700s, laid out the rules by which this calendar had worked, and the names of the months.
+According the Venerable Bede, the pre-Christian Angles, Saxons, Jutes and Frisians used a soli-lunar calendar. In his book, De Temporum Ratione, published in the 700s, Bede lays out the rules by which this calendar worked, and the names of the months among the English peoples.
 
-I became curious how this calendar worked. So, using the rules mentioned by Bede, I coded this Lunar calendar in Javascript. Because I could.
+I became curious how this calendar worked. So, using Bede's rules, I coded this Lunar calendar in Javascript. Because I could. Thanks, Bede.
 
 1.  Each month begins at the new moon. There are 12 months in a regular year, and 13 in an intercalary year.
 2.  The year begins with the full moon following the winter solstice. (For purely aesethic reasons, I changed this to the first new moon after the winter solstice).
