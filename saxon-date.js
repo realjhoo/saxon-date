@@ -356,7 +356,7 @@ const saxonMonth = [
   "Ereyule",
   "Afteryule",
   "Sol",
-  "Reda",
+  "Retha",
   "Easter",
   "Trimilch",
   "Erelitha"
