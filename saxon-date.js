@@ -24,12 +24,12 @@ Saxon Date Node App
 // bitbar.abouturl - Absolute URL to about information
 
 // dates do not work before March 1 AD 1900
-
+"use strict";
 // ========================================================
 function getJulianDate(day, mo, yr) {
   let a = (14 - mo) / 12;
   let y = yr + 4800 - a;
-  m = mo + 12 * a - 3;
+  let m = mo + 12 * a - 3;
 
   let JD =
     day + (153 * m + 2) / 5 + y * 365 + y / 4 - y / 100 + y / 400 - 32045;
@@ -122,7 +122,10 @@ function isNewMoon(date, month, yr) {
   const minNewMoon = 0.02;
   const maxNewMoon = 0.98;
   let newMoon = false;
-  let c = (e = jd = b = 0);
+  let c = 0,
+    e = 0,
+    jd = 0,
+    b = 0;
   // jd represents the age of the moon 0-99
 
   if (month < 3) {
@@ -178,7 +181,7 @@ function isIntercalary(d, m, y) {
   let justChanged = false;
   const fortnight = 14; // a new moon within 14 days of solstice triggers intercalary month following Afterlitha
 
-  for (i = 0; i < fortnight; i++) {
+  for (let i = 0; i < fortnight; i++) {
     let newMoon = isNewMoon(d + i, m, y);
     if (newMoon && !justChanged) {
       intercalary = true;
@@ -295,7 +298,7 @@ function getSaxonDate(intercalary, ssDateString, today, year) {
     // console.log(saxonMonth[moon], moon, saxonDay);
     // ***************************
   }
-
+  moon--; // temp fix - month is off by one since june 2020
   saxonDay += daysElapsed;
   const saxonYear = getSaxonYear(today, moon, year);
   const saxonDate = saxonDay + " " + saxonMonth[moon] + " " + saxonYear;
@@ -359,7 +362,7 @@ const saxonMonth = [
   "Retha",
   "Easter",
   "Trimilch",
-  "Erelitha"
+  "Erelitha",
 ];
 
 // for node apps

@@ -1,11 +1,14 @@
 notes
 
+When under the hood use
+nodemon saxon-date
+
 node saxon-date --> outputs the current Saxon calendar date
 node saxon-date 2011.06.11 --> outputs the date on 6 June 2011
 
 Moon Phase Verification at https://www.moongiant.com/phase/11/26/2019
 
-2269 RE
+2019 = 2269 RE
 
 W solstice 12/21/19 (Yuletide ends on 1/1)
 
