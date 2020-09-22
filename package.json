@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/realjhoo/saxon-date#readme",
   "devDependencies": {
-    "nodemon": "^2.0.1"
+    "nodemon": "^2.0.4"
   }
 }
