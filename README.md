@@ -24,7 +24,7 @@ If you find any other bug or defect in my code, please message me!
 For the purpose of saxon-date, I am using the Runic Era (RE) year. The RE is not a real thing. It basically just adds 250 years to the current Gregorian year. I wanted to use a year/era that was older than the current era to show that this traditional indigenous calendar, and the culture it is attached to, pre-dates the Christianization of Europe. However, since the Germanic peoples of northwest Europe were largely illiterate at that time, there does not seem to a historical era that fits the bill. 
 
 ## Command Line Notes
-Entering `node saxon-date 2011.06.11` in the terminal will produce the Saxon Date for June 11th 2011 (so, big endian), which is 11 Afterlitha 2261 (which is little endian). So note that, the date on the command line should be entered numerically, year.month.day. You can use other separators, I just temd to use periods, but dashes and slashes work. But, be warned Frenchmen, you cannot use Roman numerals for the months.
+Entering `node saxon-date 2011.06.11` in the terminal will produce the Saxon Date for June 11th 2011 (so, big endian), which is 11 Afterlitha 2261 (which is little endian). So note that, the date on the command line should be entered numerically, year.month.day. You can use other separators, I just tend to use periods, but dashes and slashes work. But, be warned Frenchmen, you cannot use Roman numerals for the months.
 
 ## Bitbar Notes
 Run `chmod +x plugin.sh.` on saxon-date.js to change the permissions on the file so Bitbar can run it.
